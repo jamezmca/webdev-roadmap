@@ -21,6 +21,8 @@
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
+            transition-duration: 300ms;
+            user-select: none;
         }
 
         body {
@@ -29,105 +31,417 @@
             position: relative;
             display: flex;
             flex-direction: column;
+            padding: 10px;
+            min-height: 100vh;
         }
 
         header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            margin: 24px 0;
-            user-select: none;
-            /* text-align: center; */
-            /* font-family: 'Lilita One', cursive; */
-        }
-
-        header:hover {
-            /* text-shadow: 0 0 3px cyan; */
-        }
-
-        header i {
-            font-size: 3.7rem;
-            color: white;
+            position: sticky;
+            top: 0;
+            flex-direction: column;
+            display: none;
         }
 
         header div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            padding: 0 10px;
+        }
+
+        header i {
+            font-size: 2.6rem;
+            color: white;
+            position: relative;
+        }
+
+        header div:first-child h1 {
+            font-weight: 800;
+            font-size: 2.4rem;
+            text-shadow:
+                0.03em 0.03em 0 rgb(0, 255, 213),
+                0.06em 0.06em 0 rgb(154, 192, 18),
+                0.09em 0.09em 0 rgb(226, 143, 87),
+                0.11em 0.11em 0 rgb(161, 24, 127);
+        }
+
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 2px 14px;
+            color: white;
+            /* background: greenyellow; */
+            margin: 10px auto;
+        }
+
+        #clause {
+            font-size: 0.7rem;
             text-align: center;
         }
 
-        header h1 {
-            font-weight: 900;
-            font-size: 2.1rem;
-            padding-top: 4px;
-            line-height: 2.1rem;
-            -webkit-text-fill-color: transparent;
-            -webkit-text-stroke: 1.5px white;
+        footer a {
+            text-decoration: none;
         }
 
-        header h4 {
-            font-weight: 800;
-            font-size: 0.68rem;
-            /* background: linear-gradient(to right, aquamarine, cyan); */
-            /* background: linear-gradient(to right, #fc00ff, #00dbde); */
-            /* background: linear-gradient(to right, #FEAC5E, #C779D0, #4BC0C8); */
-            /* background: linear-gradient(to right, #6441A5, #2a0845); */
-            /* background: linear-gradient(to right, #9d50bb, #6e48aa); */
-            /* background: linear-gradient(to right, #00d2ff, #96deda); */
-            /* background: linear-gradient(to right, #00d2ff, #93edc7); */
-            /* background: linear-gradient(to right, #1fa2ff, #12d8fa, #a6ffcb); */
-            /* background: linear-gradient(to right, #aa076b, #4e54c8, #8f94fb); */
-            /* background: linear-gradient(to right, #acb6e5, #86fde8); */
-            /* background: linear-gradient(to right, #5433ff, #20bdff, #a5fecb); */
-            /* background: linear-gradient(to right, #b2fefa, #0ed2f7); */
-            /* background: linear-gradient(to right, #d6ff42, #29e116, #93E411); */
-            /* color: white; */
+        footer a {
+            transition-duration: 300ms;
+            font-size: 1.4rem;
+            cursor: pointer;
+            color: white;
+            position: relative;
+            background: inherit;
+            z-index: 10;
+        }
+
+        footer a:hover {
+            color: #66FF00;
+            /* color: #0f172a; */
+        }
+
+
+        #title {
+            text-align: center;
+            -webkit-text-stroke: 1px aqua;
+            -webkit-text-fill-color: transparent;
+            padding: 20px 0px;
+            font-size: 1rem;
+            user-select: none;
+        }
+
+        #intro p,
+        #intro h3 {
+            text-align: center;
+            font-size: 0.8rem;
+            user-select: none;
+        }
+
+        #intro p {
+            padding: 10px 0;
+            font-size: 0.7rem;
+        }
+
+        .begin {
+            margin: 8px auto 0 auto;
+            font-size: 0.7rem;
+            background: greenyellow;
+            font-weight: 500;
+            position: relative;
             color: #0f172a;
-            padding: 0px 6px;
-            /* font-family: 'Lilita one'; */
-            letter-spacing: 1px;
-            border-radius: 2px;
-            /* -webkit-text-fill-color: #0f172a;
-            -webkit-text-stroke: 2.5px white; */
-            background: -webkit-linear-gradient(#d6ff42, #29e116);
-            -webkit-background-clip: text;
+            padding: 3px 10px;
+            cursor: pointer;
+            transition-duration: 300ms;
+        }
+
+        .begin:hover {
+            color: greenyellow;
+            background: inherit;
+        }
+
+        @media (min-width: 550px) {
+            header {
+                display: flex;
+            }
+
+            #title {
+                padding: 40px 0px;
+                -webkit-text-stroke: 1.5px aqua;
+                font-size: 2rem;
+
+            }
+
+            #intro p,
+            #intro h3 {
+                font-size: 1.2;
+            }
+        }
+
+        /* originally opacity 0.7 until page load and then full */
+        main {
+            display: relative;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            max-width: 1000px;
+            margin: 20px auto;
+            flex: 1;
+        }
+
+        main section {
+            /* height: 20px; */
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            border: 1px solid transparent;
+            border-bottom: 1px solid hsla(110, 100%, 40%, 0.6);
+            background: inherit;
+            transition-duration: 300ms;
+            position: relative;
+            box-shadow: 0 0 3px transparent;
+            /* border-radius: 5px; */
+            /* cursor: pointer; */
+            /* when it's closed have cursor pointer */
+            /* same with the background color and the border color */
+
+            /* have a selected class or smth */
+        }
+
+        main section:hover {
+            background: rgb(14, 14, 14);
+            border: 1px solid greenyellow;
+            /* box-shadow: 0 0 4px greenyellow; */
+        }
+
+        main section span {
+            display: grid;
+            place-items: center;
+            transform: translate(-100%, 0);
+            font-size: 1.4em;
+            margin-left: -4px;
+            background: #0f172a;
+        }
+
+        /* main section > i {
+            position: absolute;
+            top: 30px;
+            right: 10px;
+            transition-duration: 300ms;
+        }*/
+
+        /* main section > i:hover {    
+            color: greenyellow;
+            transform: scale(1.2);
+        } */
+
+        section>div {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10px 14px;
+
+        }
+
+        .section-header {
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            text-align: center;
+            -webkit-text-stroke: 1px greenyellow;
             -webkit-text-fill-color: transparent;
         }
 
+        @media (min-width: 550px) {
+            .section-header {
+                font-size: 2.5rem;
+            }
+        }
 
-        @media(min-width: 800px) {
-            header {
-                gap: 40px;
-                margin: 100px 0;
+        .section-subtext {
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        .section-content {
+            /* display: none; */
+            width: fit-content;
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .section-content div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section-content h1 {
+            font-weight: 500;
+            font-size: 1.0rem;
+            letter-spacing: 0.7px;
+            border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .section-content p {
+            padding: 10px 0;
+        }
+
+        .sublink {
+            margin: 0 auto;
+            font-size: 2rem;
+            padding: 8px 0;
+            color: #66FF00;
+            cursor: pointer;
+            opacity: 0.85;
+        }
+
+        .sublink:hover {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+
+        .complete {
+            margin: 8px auto 0 auto;
+            font-size: 0.7rem;
+            font-weight: 500;
+            position: relative;
+            color: #0f172a;
+            cursor: pointer;
+            transition-duration: 300ms;
+            color: greenyellow;
+            background: inherit;
+            padding: 3px 10px;
+            animation: glow 2s linear infinite;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px greenyellow;
+                transform: scale(1);
             }
 
-            header i {
-                font-size: 10rem;
+            50% {
+                text-shadow: 0 0 0px greenyellow;
+                transform: scale(1.1);
             }
 
-            header h1 {
-                line-height: 6rem;
-                font-size: 6rem;
-                -webkit-text-stroke: 2.5px white;
-
+            100% {
+                text-shadow: 0 0 10px greenyellow;
+                transform: scale(1);
             }
+        }
 
-            header h4 {
-                font-size: 1.5rem;
-                padding: 6px 0;
-                /* border-radius: 5px; */
-            }
+        .complete:hover {
+            background: inherit;
+            color: #0f172a;
+            background: greenyellow;
         }
     </style>
 </head>
 
 <body>
     <header>
-        <i class="fa-solid fa-user-astronaut"></i>
         <div>
             <h1>SMOLJAMES</h1>
-            <h4>SELF-TAUGHT WEBDEV ROADMAP</h4>
+            <i class="fa-solid fa-user-astronaut"></i>
         </div>
     </header>
+    <div id="title" class="font-effect-anaglyph">
+        <h1>WEBDEV ROADMAP</h1>
+    </div>
+    <div id="intro">
+        <h3>Welcome to this Self-taught Full Stack Webdev curriculum.</h3>
+        <p>Dive in, don't hold back, and you'll be a pro in no time :)</p>
+    </div>
+    <div class="begin">START</div>
+
+
+    <main>
+        <section id="1">
+            <!-- this one is going to be about learning javascript -->
+            <span>
+                <i class="fa-brands fa-js"></i>
+            </span>
+            <div>
+                <p class="section-header">JavaScript</p>
+                <p class="section-subtext">JavaScript is the most desirable programming language of the current age, so
+                    there's no better place to begin your coding journey.</p>
+                <div class="section-content">
+                    <!-- unordered list as if an adventure with a check box and a complete button at the bottom + a complete line/callas -->
+                    <div class="essentials">
+                        <h1>ESSENTIALS</h1>
+                        <p class="section-subtext">Begin your JavaScript Journey over at <a
+                                href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/"
+                                style="text-decoration: underline; color: white">FreeCodeCamp's</a> JavaScript
+                            Algorithms and Data Structures course. It's free, super interactive and you'll have mastered
+                            it in no time! Feel free to post any questions you may have about the course in the discord
+                            chat.</p>
+                        <a class="sublink" target="_blank"
+                            href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/">
+                            <i class="fa-brands fa-free-code-camp"></i>
+                        </a>
+                    </div>
+                    <div class="projects">
+                        <!-- minesweeper game -->
+                    </div>
+                    <div class="resources">
+
+                    </div>
+                    <div class="complete">COMPLETE</div>
+                </div>
+            </div>
+            <!-- <i class="fa-solid fa-chevron-down"></i> -->
+        </section>
+        <section id="2">
+            <!-- html plus self styling-->
+            <span>
+                <i class="fa-brands fa-html5"></i>
+            </span>
+            <p class="section-header">HTML</p>
+            <p class="section-subtext"></p>
+        </section>
+        <section id="3">
+            <!-- this one is css -->
+            <span>
+                <i class="fa-brands fa-css3-alt"></i>
+            </span>
+            <p class="section-header">CSS</p>
+            <p class="section-subtext"></p>
+        </section>
+        <section id="4">
+            <!-- react -->
+        </section>
+        <section id="5">
+            <!-- Node js -->
+        </section>
+        <section id="6">
+            <!-- Nosql databases -->
+        </section>
+        <section id="7">
+            <!-- SQL databases -->
+        </section>
+        <section id="8">
+            <!-- Paas services -->
+        </section>
+        <section id="9">
+            <!-- tailwindcss -->
+        </section>
+        <section id="10">
+            <!-- frontend frameworks -->
+        </section>
+        <section id="11">
+            <!-- python -->
+        </section>
+    </main>
+    <div id="clause" style="user-select: none;">
+        If you found this content helpful or informative, please consider liking my videos and subscribing to my youtube
+        channel :)
+    </div>
+    <footer>
+        <a>
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+        <a>
+            <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a>
+            <i class="fa-brands fa-medium"></i>
+        </a>
+        <a>
+            <i class="fa-brands fa-discord"></i>
+        </a>
+    </footer>
 </body>
 
 </html>
