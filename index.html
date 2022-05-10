@@ -31,7 +31,7 @@
             position: relative;
             display: flex;
             flex-direction: column;
-            padding: 10px;
+            padding: 0 10px 10px 10px;
             min-height: 100vh;
         }
 
@@ -40,6 +40,8 @@
             top: 0;
             flex-direction: column;
             display: none;
+            background: inherit;
+            z-index: 50;
         }
 
         header div {
@@ -303,8 +305,10 @@
             background: inherit;
             padding: 3px 10px;
             animation: glow 2s linear infinite;
+            text-shadow: 0 0 4px greenyellow;
         }
 
+        /* 
         @keyframes glow {
             0% {
                 text-shadow: 0 0 10px greenyellow;
@@ -320,12 +324,17 @@
                 text-shadow: 0 0 10px greenyellow;
                 transform: scale(1);
             }
-        }
+        } */
 
         .complete:hover {
             background: inherit;
             color: #0f172a;
             background: greenyellow;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         }
     </style>
 </head>
@@ -348,7 +357,7 @@
 
 
     <main>
-        <section id="1">
+        <section id="javascript">
             <!-- this one is going to be about learning javascript -->
             <span>
                 <i class="fa-brands fa-js"></i>
@@ -371,11 +380,15 @@
                             href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/">
                             <i class="fa-brands fa-free-code-camp"></i>
                         </a>
+                        ADDD SYLLLABUS AT THE END AS A CHECKLIST REQUIRED FOR THE COMPLETE BUTTON
                     </div>
                     <div class="projects">
                         <!-- minesweeper game -->
+                        <!-- need to have a series of checklists before completeing this -->
+
                     </div>
                     <div class="resources">
+                        <!-- articles -->
 
                     </div>
                     <div class="complete">COMPLETE</div>
@@ -383,7 +396,7 @@
             </div>
             <!-- <i class="fa-solid fa-chevron-down"></i> -->
         </section>
-        <section id="2">
+        <section id="html">
             <!-- html plus self styling-->
             <span>
                 <i class="fa-brands fa-html5"></i>
@@ -391,7 +404,7 @@
             <p class="section-header">HTML</p>
             <p class="section-subtext"></p>
         </section>
-        <section id="3">
+        <section id="css">
             <!-- this one is css -->
             <span>
                 <i class="fa-brands fa-css3-alt"></i>
@@ -399,28 +412,36 @@
             <p class="section-header">CSS</p>
             <p class="section-subtext"></p>
         </section>
-        <section id="4">
+
+        <section id="git">
+
+        </section>
+
+        <section id="react">
             <!-- react -->
         </section>
-        <section id="5">
+        <section id="node">
             <!-- Node js -->
         </section>
-        <section id="6">
+        <section id="nosql">
             <!-- Nosql databases -->
         </section>
-        <section id="7">
+        <section id="sql">
             <!-- SQL databases -->
         </section>
-        <section id="8">
+        <section id="paas">
             <!-- Paas services -->
         </section>
-        <section id="9">
+        <section id="tailwind">
             <!-- tailwindcss -->
         </section>
-        <section id="10">
+        <section id="frontend">
             <!-- frontend frameworks -->
         </section>
-        <section id="11">
+        <section id="python">
+            <!-- python -->
+        </section>
+        <section id="webscraping">
             <!-- python -->
         </section>
     </main>
@@ -429,6 +450,7 @@
         channel :)
     </div>
     <footer>
+        buy me a cofffeeee
         <a>
             <i class="fa-brands fa-youtube"></i>
         </a>
@@ -442,6 +464,16 @@
             <i class="fa-brands fa-discord"></i>
         </a>
     </footer>
+    <script>
+        const videos = {
+            javascript: []
+        }
+        const sections = document.querySelectorAll('section') //can target the id key
+
+        async function load() {
+
+        }
+    </script>
 </body>
 
 </html>
